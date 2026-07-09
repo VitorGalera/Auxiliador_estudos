@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro de Estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Auxiliador de Estudos</h1>
+
+    <div class="inputs">
+
+        <div>
+            <label>Tempo de Estudo (min)</label>
+            <input type="number" id="studyTime" value="25">
+        </div>
+
+        <div>
+            <label>Tempo de Descanso (min)</label>
+            <input type="number" id="breakTime" value="5">
+        </div>
+
+    </div>
+
+    <h2 id="mode">Modo: Estudo</h2>
+
+    <div id="timer">
+        25:00
+    </div>
+
+    <div class="buttons">
+        <button onclick="startTimer()">Iniciar</button>
+        <button onclick="pauseTimer()">Pausar</button>
+        <button onclick="resetTimer()">Reiniciar</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
