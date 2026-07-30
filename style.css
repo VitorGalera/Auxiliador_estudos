@@ -6,7 +6,7 @@
 }
 
 body{
-    background:#10002B;
+    background:#97A2FF;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -16,7 +16,7 @@ body{
 
 .container{
     width:400px;
-    background:#7B2CBF;
+    background:#AFCBFF;
     padding:30px;
     border-radius:15px;
     text-align:center;
