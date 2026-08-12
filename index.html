@@ -1,46 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronômetro de Estudos</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ciclo de Foco</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="wrap">
+  <h1>Ciclo de Foco</h1>
 
-<div class="container">
+  <section class="card">
+    <p class="phase-label" id="phaseLabel">Hora de estudar</p>
+    <div class="time" id="timeDisplay">25:00</div>
+    <p class="cycle-count" id="cycleCount">Ciclos concluídos: 0</p>
 
-    <h1>Auxiliador de Estudos</h1>
-
-    <div class="inputs">
-
-        <div>
-            <label>Tempo de Estudo (min)</label>
-            <input type="number" id="studyTime" value="25">
-        </div>
-
-        <div>
-            <label>Tempo de Descanso (min)</label>
-            <input type="number" id="breakTime" value="5">
-        </div>
-
+    <div class="controls">
+      <button class="btn-primary" id="startPauseBtn">Iniciar</button>
+      <button id="resetBtn">Reiniciar</button>
     </div>
 
-    <h2 id="mode">Modo: Estudo</h2>
-
-    <div id="timer">
-        25:00
+    <div class="settings">
+      <div class="field">
+        <label for="studyInput">Estudo (min)</label>
+        <input type="number" id="studyInput" min="1" max="180" value="25">
+      </div>
+      <div class="field">
+        <label for="restInput">Descanso (min)</label>
+        <input type="number" id="restInput" min="1" max="60" value="5">
+      </div>
     </div>
+  </section>
 
-    <div class="buttons">
-        <button onclick="startTimer()">Iniciar</button>
-        <button onclick="pauseTimer()">Pausar</button>
-        <button onclick="resetTimer()">Reiniciar</button>
+  <section class="card">
+    <h2>Tarefas</h2>
+
+    <form class="task-form" id="taskForm">
+      <input type="text" id="taskInput" placeholder="O que você precisa estudar?" autocomplete="off">
+      <button type="submit" class="btn-primary">Adicionar</button>
+    </form>
+
+    <ul class="task-list" id="taskList"></ul>
+    <p class="empty-state" id="emptyState">Nenhuma tarefa ainda. Adicione a primeira acima.</p>
+
+    <div class="tasks-footer">
+      <span id="taskSummary">0 de 0 concluídas</span>
+      <button id="clearDoneBtn" type="button">Remover concluídas</button>
     </div>
-
+  </section>
 </div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
