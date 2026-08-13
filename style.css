@@ -1,15 +1,18 @@
+/* Faz padding e borda contarem DENTRO da largura/altura definida,
+   evitando que elementos "estourem" o layout */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: #12161d;
-  color: #eef1f6;
+  background: #12161d;      /* fundo escuro */
+  color: #eef1f6;            /* texto claro */
   font-family: Arial, sans-serif;
   padding: 40px 16px;
 }
 
+/* Contêiner central: limita a largura e centraliza na tela */
 .wrap {
   max-width: 480px;
   margin: 0 auto;
@@ -20,6 +23,7 @@ h1 {
   margin-bottom: 24px;
 }
 
+/* Estilo dos "cartões" (timer e tarefas) */
 .card {
   background: #1a2029;
   border: 1px solid #2a3140;
@@ -30,12 +34,12 @@ h1 {
 }
 
 .phase-label {
-  color: #8b93a3;
+  color: #8b93a3;   /* cinza mais apagado, texto secundário */
   margin: 0 0 8px;
 }
 
 .time {
-  font-size: 48px;
+  font-size: 48px;  /* número grande, é o elemento mais importante do cartão */
   font-weight: bold;
 }
 
@@ -45,6 +49,7 @@ h1 {
   margin: 8px 0 20px;
 }
 
+/* flex + gap: coloca os botões lado a lado com espaço entre eles */
 .controls {
   display: flex;
   justify-content: center;
@@ -52,6 +57,7 @@ h1 {
   margin-bottom: 24px;
 }
 
+/* Estilo base de todos os botões */
 button {
   font-size: 14px;
   font-weight: bold;
@@ -67,6 +73,7 @@ button:hover {
   background: #2a3140;
 }
 
+/* Botões de destaque (Iniciar, Adicionar) — cor diferente para chamar atenção */
 .btn-primary {
   background: #e8a33d;
   color: #1a1305;
@@ -77,17 +84,18 @@ button:hover {
   background: #f0ae4f;
 }
 
+/* Linha com os campos de minutos de estudo/descanso */
 .settings {
   display: flex;
   justify-content: center;
   gap: 20px;
-  border-top: 1px solid #2a3140;
+  border-top: 1px solid #2a3140;  /* linha separando dos botões acima */
   padding-top: 20px;
 }
 
 .field {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  /* label em cima, input embaixo */
   align-items: center;
   gap: 6px;
 }
@@ -108,6 +116,7 @@ button:hover {
   padding: 6px;
 }
 
+/* Deixa os campos "apagados" visualmente enquanto o timer está rodando */
 .field input:disabled {
   opacity: 0.5;
 }
@@ -117,6 +126,7 @@ button:hover {
   margin: 0 0 16px;
 }
 
+/* Linha com o campo de texto + botão "Adicionar" */
 .task-form {
   display: flex;
   gap: 8px;
@@ -124,7 +134,7 @@ button:hover {
 }
 
 .task-form input {
-  flex: 1;
+  flex: 1;   /* ocupa todo o espaço disponível, empurrando o botão pra direita */
   background: #212836;
   border: 1px solid #2a3140;
   border-radius: 8px;
@@ -133,6 +143,7 @@ button:hover {
   padding: 10px 12px;
 }
 
+/* Lista de tarefas: sem marcadores padrão de <ul>, itens empilhados */
 .task-list {
   list-style: none;
   margin: 0;
@@ -143,6 +154,7 @@ button:hover {
   text-align: left;
 }
 
+/* Cada linha de tarefa: checkbox + texto + botão de remover, lado a lado */
 .task-item {
   display: flex;
   align-items: center;
@@ -160,11 +172,12 @@ button:hover {
 }
 
 .task-text {
-  flex: 1;
+  flex: 1;   /* texto ocupa o espaço restante da linha */
   font-size: 14px;
-  word-break: break-word;
+  word-break: break-word;  /* quebra palavras longas para não estourar o layout */
 }
 
+/* Quando o item tem a classe "done" (marcado pelo JS), risca o texto */
 .task-item.done .task-text {
   color: #8b93a3;
   text-decoration: line-through;
@@ -179,7 +192,7 @@ button:hover {
 }
 
 .remove-btn:hover {
-  color: #e2685a;
+  color: #e2685a;  /* fica vermelho ao passar o mouse, indicando ação destrutiva */
 }
 
 .empty-state {
@@ -193,7 +206,7 @@ button:hover {
   font-size: 12px;
   color: #8b93a3;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between;  /* contador de um lado, botão do outro */
   align-items: center;
 }
 
