@@ -4,22 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ciclo de Foco</title>
+<!-- Liga o arquivo de estilos a esta página -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
   <h1>Ciclo de Foco</h1>
 
+  <!-- ===== CARTÃO DO TIMER ===== -->
   <section class="card">
+    <!-- Texto que muda entre "Hora de estudar" / "Hora de descansar" -->
     <p class="phase-label" id="phaseLabel">Hora de estudar</p>
+
+    <!-- Mostra o tempo restante no formato MM:SS -->
     <div class="time" id="timeDisplay">25:00</div>
+
+    <!-- Contador de quantos ciclos de estudo já foram concluídos -->
     <p class="cycle-count" id="cycleCount">Ciclos concluídos: 0</p>
 
+    <!-- Botões de controle do timer -->
     <div class="controls">
       <button class="btn-primary" id="startPauseBtn">Iniciar</button>
       <button id="resetBtn">Reiniciar</button>
     </div>
 
+    <!-- Campos onde o usuário define a duração de cada fase -->
     <div class="settings">
       <div class="field">
         <label for="studyInput">Estudo (min)</label>
@@ -32,15 +41,20 @@
     </div>
   </section>
 
+  <!-- ===== CARTÃO DE TAREFAS ===== -->
   <section class="card">
     <h2>Tarefas</h2>
 
+    <!-- Formulário de adição: usar <form> permite adicionar com Enter -->
     <form class="task-form" id="taskForm">
       <input type="text" id="taskInput" placeholder="O que você precisa estudar?" autocomplete="off">
       <button type="submit" class="btn-primary">Adicionar</button>
     </form>
 
+    <!-- Lista de tarefas: começa vazia, o JS insere os itens aqui -->
     <ul class="task-list" id="taskList"></ul>
+
+    <!-- Mensagem exibida só quando não há nenhuma tarefa -->
     <p class="empty-state" id="emptyState">Nenhuma tarefa ainda. Adicione a primeira acima.</p>
 
     <div class="tasks-footer">
@@ -50,6 +64,7 @@
   </section>
 </div>
 
+<!-- Carrega o JS no final do body, para garantir que o HTML acima já exista -->
 <script src="script.js"></script>
 </body>
 </html>
